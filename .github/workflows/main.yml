@@ -1,4 +1,4 @@
-name: GitHub Actions Build and Deploy Demo
+name: Build and Deploy
 on:
     push:
         branches:
@@ -15,11 +15,11 @@ jobs:
               uses: actions/checkout@v4
             - name: Install and Build
               run: |
-                  npm install
-                  npm run-script build
+                  npm ci
+                  npm run build
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  token: ${{ secrets.ACCESS_TOKEN }}
-                  branch: gh-pages
-                  folder: build
+                  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+                  BRANCH: gh-pages
+                  FOLDER: build
