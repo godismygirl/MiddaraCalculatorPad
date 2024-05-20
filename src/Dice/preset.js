@@ -1,79 +1,80 @@
 const increase = (set) => {
-    let after = {};
-    Object.keys(set)?.forEach((key) => {
-        after[key + 1] = set[key];
-    });
-    return after;
+  let after = {};
+  Object.keys(set)?.forEach((key) => {
+    const newKey = parseInt(key) + 1;
+    after[newKey] = set[key];
+  });
+  return after;
 };
 
-export const PHYSIC_DICE = ['BLUE', 'FIRE', 'YELLOW', 'PINK'];
-export const MAGIC_DICE = ['GREY', 'SKY', 'BROWN', 'HUNTER'];
+export const PHYSIC_DICE = ["BLUE", "FIRE", "YELLOW", "PINK"];
+export const MAGIC_DICE = ["GREY", "SKY", "BROWN", "HUNTER"];
 
 let DICE_SET = {
-    BLUE: {
-        5: {
-            shield: 0,
-            book: 0,
-            burst: 0,
-        },
-        6: {
-            shield: 0,
-            book: 0,
-            burst: 0,
-        },
-        7: {
-            shield: 1,
-            book: 0,
-            burst: 0,
-        },
-        8: {
-            shield: 1,
-            book: 1,
-            burst: 0,
-        },
-        9: {
-            shield: 2,
-            book: 1,
-            burst: 0,
-        },
-        10: {
-            shield: 2,
-            book: 1,
-            burst: 1,
-        },
+  BLUE: {
+    5: {
+      shield: 0,
+      book: 0,
+      burst: 0,
     },
-    GREY: {
-        4: {
-            shield: 0,
-            book: 0,
-            burst: 0,
-        },
-        5: {
-            shield: 0,
-            book: 0,
-            burst: 0,
-        },
-        6: {
-            shield: 0,
-            book: 1,
-            burst: 0,
-        },
-        8: {
-            shield: 1,
-            book: 1,
-            burst: 0,
-        },
-        9: {
-            shield: 1,
-            book: 2,
-            burst: 0,
-        },
-        10: {
-            shield: 1,
-            book: 2,
-            burst: 0,
-        },
+    6: {
+      shield: 0,
+      book: 0,
+      burst: 0,
     },
+    7: {
+      shield: 1,
+      book: 0,
+      burst: 0,
+    },
+    8: {
+      shield: 1,
+      book: 1,
+      burst: 0,
+    },
+    9: {
+      shield: 2,
+      book: 1,
+      burst: 0,
+    },
+    10: {
+      shield: 2,
+      book: 1,
+      burst: 1,
+    },
+  },
+  GREY: {
+    4: {
+      shield: 0,
+      book: 0,
+      burst: 0,
+    },
+    5: {
+      shield: 0,
+      book: 0,
+      burst: 0,
+    },
+    6: {
+      shield: 0,
+      book: 1,
+      burst: 0,
+    },
+    8: {
+      shield: 1,
+      book: 1,
+      burst: 0,
+    },
+    9: {
+      shield: 1,
+      book: 2,
+      burst: 0,
+    },
+    10: {
+      shield: 1,
+      book: 2,
+      burst: 0,
+    },
+  },
 };
 
 DICE_SET.FIRE = increase(DICE_SET.BLUE);

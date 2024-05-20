@@ -1,73 +1,106 @@
-import React, { useState } from 'react';
-import { uid } from 'uid';
-import { ENEMY_COLLECTION } from './EnemyCollection';
-import { WEAPON_CONFIG } from './WeaponConfig';
+import { create } from "zustand";
+import { uid } from "uid";
+import { ENEMY_COLLECTION } from "./EnemyCollection";
+import { WEAPON_CONFIG } from "./WeaponConfig";
+import { DICE_COLOR_SET } from "./DiceColorSet";
 
 const flattenCollection = () => {
-    let result = [];
-    Object.keys(ENEMY_COLLECTION)?.forEach((key) =>
-        result.push({
-            type: key,
-            ...ENEMY_COLLECTION[key],
-        })
-    );
-    return result;
+  let result = [];
+  Object.keys(ENEMY_COLLECTION)?.forEach((key) =>
+    result.push({
+      type: key,
+      ...ENEMY_COLLECTION[key],
+    })
+  );
+  return result;
 };
 
-const GlobalStore = () => {
-    const [activeEnemy, setActiveEnemy] = useState();
-    const [selectedEnemy, setSelectedEnemy] = useState([]);
+// {
+//     activeEnemy:{},
+//     selectedEnemy:[],
+//     activeAlly:"",
+//     allySet: {
+//         remi:{},
+//         nightingale:{},
+//         rook:{},
+//         zeke:{}
+//     }
+// }
 
-    const addEnemy = (enemy) => {
-        selectedEnemy.push({
-            id: uid(),
-            ...enemy,
-        });
-        setSelectedEnemy([...selectedEnemy]);
-    };
+const useGlobalStore = create((set) => {
+  const addEnemy = (enemy) => {
+    set((state) => {
+      const se = [...state.selectedEnemy];
+      se.push({
+        id: uid(),
+        ...enemy,
+      });
+      return { selectedEnemy: se };
+    });
+  };
 
-    const removeEnemyByType = (enemyType) => {
-        const foeIndex = selectedEnemy.findIndex(
-            (foe) => foe.type === enemyType
-        );
-        if (foeIndex !== -1) {
-            selectedEnemy.splice(foeIndex, 1);
-            setSelectedEnemy([...selectedEnemy]);
-        }
-    };
+  const removeEnemyByType = (enemyType) => {
+    set(({ selectedEnemy }) => {
+      const se = [...selectedEnemy];
+      const foeIndex = se.findIndex((foe) => foe.type === enemyType);
+      if (foeIndex !== -1) {
+        se.splice(foeIndex, 1);
+        return { selectedEnemy: se };
+      }
+    });
+  };
 
-    const removeEnemyById = (enemyId) => {
-        const foeIndex = selectedEnemy.findIndex((foe) => foe.id === enemyId);
-        if (foeIndex !== -1) {
-            selectedEnemy.splice(foeIndex, 1);
-            setSelectedEnemy([...selectedEnemy]);
-        }
-    };
+  const removeEnemyById = (enemyId) => {
+    set(({ selectedEnemy }) => {
+      const se = [...selectedEnemy];
+      const foeIndex = se.findIndex((foe) => foe.id === enemyId);
+      if (foeIndex !== -1) {
+        se.splice(foeIndex, 1);
+        return { selectedEnemy: se };
+      }
+    });
+  };
 
-    const getEnemyCount = (enemyType) => {
-        const foes = selectedEnemy.filter((foe) => foe.type === enemyType);
-        return foes?.length;
-    };
+  //   const getEnemyCount = (enemyType) => {
+  //     set(({selectedEnemy}) => {
+  //         const se = [...selectedEnemy];
+  //         const foes = selectedEnemy.filter((foe) => foe.type === enemyType);
+  //     return foes?.length;
+  //     });
 
-    const updateEnemyStatus = ({ id, status }) => {
-        const target = selectedEnemy.find((foe) => foe.id === id);
-        target.status = status;
-    };
+  //   };
 
-    return {
-        addEnemy,
-        removeEnemyByType,
-        removeEnemyById,
-        getEnemyCount,
-        selectedEnemy,
-        updateEnemyStatus,
-        activeEnemy,
-        setActiveEnemy,
-    };
-};
+  const setActiveEnemy = (enemy) => {
+    set(() => ({ activeEnemy: enemy }));
+  };
+
+  const setActiveAlly = (allyName) => {
+    set(() => ({ activeAlly: allyName }));
+  };
+
+  const updateEnemyStatus = ({ id, status }) => {
+    set(({ selectedEnemy }) => {
+      const se = [...selectedEnemy];
+      const target = se.find((foe) => foe.id === id);
+      target.status = status;
+      return { selectedEnemy: se };
+    });
+  };
+
+  return {
+    activeEnemy: null,
+    setActiveEnemy,
+    activeAlly: "",
+    setActiveAlly,
+    selectedEnemy: [],
+    addEnemy,
+    removeEnemyByType,
+    removeEnemyById,
+    updateEnemyStatus,
+  };
+});
 
 const FLAT_ENEMY_COLLECTION = flattenCollection();
 
-export { FLAT_ENEMY_COLLECTION };
-export { WEAPON_CONFIG };
-export default GlobalStore;
+export { FLAT_ENEMY_COLLECTION, WEAPON_CONFIG, DICE_COLOR_SET };
+export default useGlobalStore;
