@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import useGlobalStore from "../GlobalStore";
 import { FLAT_ENEMY_COLLECTION } from "../GlobalStore";
-import {
-  MinusCircleFilled,
-  PlusCircleFilled,
-  MinusOutlined,
-  PlusOutlined,
-  MinusCircleOutlined,
-  PlusCircleOutlined,
-} from "@ant-design/icons";
+import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import css from "./css.module.css";
 
 const FoeSelectPanel = () => {
@@ -31,7 +24,7 @@ const FoeSelectPanel = () => {
             const count = getFoeCount(el.type);
             return (
               <div key={el.type} className={css.block}>
-                <img src={`./portait/${el.type}.png`} />
+                <img alt="" src={`./portait/${el.type}.png`} />
                 <div className={css.action}>
                   <i
                     className={count > 0 ? css.btn : css.disabledBtn}

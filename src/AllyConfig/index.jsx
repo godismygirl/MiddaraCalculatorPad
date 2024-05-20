@@ -12,16 +12,16 @@ const AllyConfig = () => {
     <div className={css.container}>
       <div className={css.roles}>
         <div className={css.remi}>
-          <img src={`./adventurer/remi.png`} />
+          <img alt="" src={`./adventurer/remi.png`} />
         </div>
         <div className={css.nightingale}>
-          <img src={`./adventurer/nightingale.png`} />
+          <img alt="" src={`./adventurer/nightingale.png`} />
         </div>
         <div className={css.rook}>
-          <img src={`./adventurer/rook.png`} />
+          <img alt="" src={`./adventurer/rook.png`} />
         </div>
         <div className={css.zeke}>
-          <img src={`./adventurer/zeke.png`} />
+          <img alt="" src={`./adventurer/zeke.png`} />
         </div>
       </div>
       <div className={css.body}>

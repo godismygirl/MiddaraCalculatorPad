@@ -22,7 +22,7 @@ const BattleField = () => {
             )}
 
             <div className={css.portait}>
-              <img src={`./portait/${enemy.type}.png`} />
+              <img alt="" src={`./portait/${enemy.type}.png`} />
             </div>
             <div className={css.content}>
               <div className={css.row}>

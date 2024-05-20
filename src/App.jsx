@@ -1,4 +1,3 @@
-import Dice from "./Dice";
 import "./global.css";
 import EnemySelectPanel from "./EnemySelectPanel";
 import BattleField from "./BattleField";
