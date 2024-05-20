@@ -1,0 +1,99 @@
+.dice {
+    position: relative;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.BLUE {
+    background: #3165b1;
+}
+.FIRE {
+    background: #fbb017;
+}
+.YELLOW {
+    background: #f7ef66;
+}
+.PINK {
+    background: #f07aac;
+}
+.GREY {
+    background: #5c6f7d;
+}
+.SKY {
+    background: #14bbef;
+}
+.BROWN {
+    background: #7d3d22;
+}
+.HUNTER {
+    background: #00794c;
+}
+
+.skull {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, -50%);
+    margin-top: -1%;
+}
+
+.count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, -50%);
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top: -1%;
+}
+
+.topLeft {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10%;
+}
+
+.topRight {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 10%;
+}
+
+.bottomLeft {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 10%;
+}
+
+.bottomRight {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 10%;
+}

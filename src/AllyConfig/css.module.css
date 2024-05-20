@@ -1,0 +1,43 @@
+.container {
+    flex: 3;
+    height: 100%;
+    overflow: hidden;
+}
+
+.roles {
+    display: flex;
+    gap: 3vh;
+    padding: 3.5vh;
+    background: #f0f0f0;
+}
+.roles img {
+    width: 100%;
+    border-radius: 10vh;
+    border: 0.5vh solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.remi {
+    width: 10vh;
+    height: 10vh;
+}
+.nightingale {
+    width: 10vh;
+    height: 10vh;
+}
+.rook {
+    width: 10vh;
+    height: 10vh;
+}
+.zeke {
+    width: 10vh;
+    height: 10vh;
+}
+
+.body {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.body::-webkit-scrollbar {
+    display: none;
+}
