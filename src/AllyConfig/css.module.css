@@ -1,43 +1,63 @@
 .container {
-  flex-grow: 1;
-  height: 100%;
-  overflow: hidden;
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .roles {
-  display: flex;
-  gap: 3vh;
-  padding: 3.5vh;
-  background: #f0f0f0;
+    display: flex;
+    gap: 3vh;
+    padding: 3.5vh;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
 }
 .roles img {
-  width: 100%;
-  border-radius: 10vh;
-  border: 0.5vh solid #fff;
-  box-sizing: border-box;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    border-radius: 10vh;
+    border: 5px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
-.remi {
-  width: 10vh;
-  height: 10vh;
+.activeFace {
+    border-color: #f50 !important;
 }
-.nightingale {
-  width: 10vh;
-  height: 10vh;
-}
-.rook {
-  width: 10vh;
-  height: 10vh;
-}
-.zeke {
-  width: 10vh;
-  height: 10vh;
+
+.avatar {
+    width: 10vh;
+    height: 10vh;
 }
 
 .body {
-  flex-grow: 1;
-  overflow-y: auto;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 .body::-webkit-scrollbar {
-  display: none;
+    display: none;
+}
+
+.section {
+    border-top: 1px solid #ddd;
+}
+.sectionHeader {
+    padding: 20px;
+}
+.sectionHeader .titleTag {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    background: #222;
+    padding: 4px 15px 4px 10px;
+    border-radius: 60px;
+    align-items: center;
+    display: inline-flex;
+}
+.sectionHeader span {
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.sectionBody {
+    padding: 0 20px 20px 20px;
 }

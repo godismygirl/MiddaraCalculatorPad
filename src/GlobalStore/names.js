@@ -1,0 +1,21 @@
+export const ALLY_NAMES = ['REMI', 'NIGHTINGALE', 'ROOK', 'ZEKE'];
+
+export const ENEMY_NAMES = [
+    'BLIGHTED_GUARDIAN',
+    'CORPSE_COLLECTOR',
+    'ENSLAVED_SPIRIT',
+    'GATEKEEPER',
+    'GEVAUDAN',
+    'LICH_WURM',
+    'LIVING_OBLATION',
+    'MERK_HOUND',
+    'SOUL_BUTCHER',
+    'TORTURED_IMMORTAL',
+];
+
+export const DISCRIPLINE_NAMES = [
+    'TRICK_SHOT',
+    'C.Q.C',
+    'PRECISE_STRIKE',
+    'MASTER_OF_THE_VESSEL',
+];

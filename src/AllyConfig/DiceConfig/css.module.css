@@ -1,59 +1,61 @@
+.container {
+}
 .icon {
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .BLUE {
-  background: #3165b1;
+    background: #3165b1;
 }
 .FIRE {
-  background: #fbb017;
+    background: #fbb017;
 }
 .YELLOW {
-  background: #f7ef66;
+    background: #f7ef66;
 }
 .PINK {
-  background: #f07aac;
+    background: #f07aac;
 }
 .GREY {
-  background: #5c6f7d;
+    background: #5c6f7d;
 }
 .SKY {
-  background: #14bbef;
+    background: #14bbef;
 }
 .BROWN {
-  background: #7d3d22;
+    background: #7d3d22;
 }
 .HUNTER {
-  background: #00794c;
+    background: #00794c;
 }
 
 .active {
-  color: #1677ff;
-  font-size: 14px;
-  background: #f0f0f0;
+    color: #1677ff;
+    font-size: 14px;
 }
 .activeDice {
-  color: #1677ff;
-  font-size: 16px;
+    color: #1677ff;
+    font-size: 16px;
 }
 
 .color {
-  display: flex;
+    display: flex;
+    margin-bottom: 8px;
 }
 
 .box {
-  padding: 4px;
-  border-radius: 8px;
-  border: 2px solid transparent;
-  text-align: center;
+    padding: 4px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    text-align: center;
 }
 
 .dice {
-  display: flex;
+    display: flex;
 }

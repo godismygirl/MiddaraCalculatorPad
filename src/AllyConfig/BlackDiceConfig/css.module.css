@@ -1,0 +1,15 @@
+.box {
+    padding: 4px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    text-align: center;
+}
+.body {
+    display: flex;
+    margin-top: 15px;
+}
+
+.active {
+    color: #1677ff;
+    font-size: 16px;
+}
