@@ -20,5 +20,5 @@ export const DISCRIPLINE_NAMES = [
     'MASTER_OF_THE_VESSEL',
 ];
 
-export const DEBUFF_NAMES = ['DARKNESS', 'HINDERING', 'CROSS_ALLY'];
-export const BUFF_NAMES = ['WILT', 'NEMESIS'];
+export const DEBUFF_NAMES = ['DARKNESS', 'HINDERING', 'CROSS_ALLY', 'FLANKING'];
+export const BUFF_NAMES = ['WILT', 'NEMESIS', 'COURAGE'];

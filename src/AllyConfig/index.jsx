@@ -50,7 +50,25 @@ const AllyConfig = () => {
                                 <WeaponConfig type="burst" />
                             </Form.Item>
                         </div>
-                        <AttackRollConfig />
+                        <div className={css.sectionHeader}>
+                            <div className={css.titleTag}>
+                                <Icon.Status color="#fff" size={12} />
+                                <span>ACC MOD</span>
+                            </div>
+                        </div>
+                        <div className={css.sectionBody}>
+                            <Form.Item name="accuracy" noStyle>
+                                <AttackRollConfig />
+                            </Form.Item>
+                        </div>
+
+                        <div className={css.sectionHeader}>
+                            <div className={css.titleTag}>
+                                <Icon.Status color="#fff" size={12} />
+                                <span>DMG MOD</span>
+                            </div>
+                        </div>
+
                         <div className={css.section}>
                             <div className={css.sectionHeader}>
                                 <div className={css.titleTag}>
