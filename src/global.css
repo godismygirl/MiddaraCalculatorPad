@@ -1,6 +1,17 @@
+@font-face {
+    font-family: 'Verdana';
+    src: url('../public/font/Verdana.ttf');
+}
+
+@font-face {
+    font-family: 'Verdana-Bold';
+    src: url('../public/font/verdanab.ttf');
+}
+
 html,
 body,
 #root {
     height: 100%;
     overflow: hidden;
+    font-family: 'DIN';
 }
