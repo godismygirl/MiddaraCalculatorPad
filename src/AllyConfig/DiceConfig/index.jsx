@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CheckOutlined } from '@ant-design/icons';
 import { DICE_COLOR_SET } from '../../GlobalStore';
-import Dice from '../../Dice';
+import Dice from '../../comps/Dice';
 import css from './css.module.css';
 
 //数据格式 {color:'BLUE', count:9, shield:1, book:1, burst:0}
@@ -65,12 +65,11 @@ const DiceConfig = ({ value, onChange }) => {
                                     onChange?.(c);
                                 }}
                             />
-                            {active && (
-                                <CheckOutlined
-                                    className={css.activeDice}
-                                    style={{ marginTop: 5 }}
-                                />
-                            )}
+                            <div className={css.checkPlace}>
+                                {active && (
+                                    <CheckOutlined className={css.activeDice} />
+                                )}
+                            </div>
                         </div>
                     );
                 })}

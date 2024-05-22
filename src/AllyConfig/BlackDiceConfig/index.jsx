@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Switch } from 'antd';
 import { CheckOutlined } from '@ant-design/icons';
-import Dice from '../../Dice';
+import Dice from '../../comps/Dice';
 import css from './css.module.css';
 
 //黑骰子默认1-6
@@ -44,15 +44,24 @@ const BlackDiceConfig = ({ value, onChange }) => {
 
     return (
         <div className={css.container}>
-            <Switch
-                checked={empower}
-                checkedChildren="ON"
-                unCheckedChildren="OFF"
-                onChange={(checked) => {
-                    setEmpower(checked);
-                    onChange?.();
-                }}
-            />
+            <div className={css.header}>
+                <span
+                    className={css.label}
+                    style={{ color: empower ? '#1677ff' : '#999' }}
+                >
+                    EMPOWER
+                </span>
+                <Switch
+                    checked={empower}
+                    checkedChildren="ON"
+                    unCheckedChildren="OFF"
+                    onChange={(checked) => {
+                        setEmpower(checked);
+                        onChange?.();
+                    }}
+                />
+            </div>
+
             {empower && <div className={css.body}>{renderDice()}</div>}
         </div>
     );

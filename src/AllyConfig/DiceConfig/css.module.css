@@ -35,6 +35,10 @@
     background: #00794c;
 }
 
+.checkPlace {
+    height: 20px;
+    padding-top: 4px;
+}
 .active {
     color: #1677ff;
     font-size: 14px;

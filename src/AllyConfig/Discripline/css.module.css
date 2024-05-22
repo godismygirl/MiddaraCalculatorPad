@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+}
+.header {
+    font-size: 14px;
+    line-height: 14px;
+    color: #fff;
+    position: relative;
+    height: 20px;
+}
+.header .title {
+    display: inline-block;
+    width: 12vw;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px;
+}
+
+.body {
+    padding: 20px 0;
+}
+
+.martial .header {
+    border-top: 4px solid #0d506b;
+}
+.martial .title {
+    background: #0d506b;
+}
+
+.subterfuge .header {
+    border-top: 4px solid #491347;
+}
+.subterfuge .title {
+    background: #491347;
+}

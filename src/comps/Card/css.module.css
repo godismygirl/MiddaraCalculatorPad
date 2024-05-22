@@ -1,0 +1,37 @@
+.card {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.header .placeholder {
+    flex-grow: 1;
+}
+.header .title {
+    font-weight: bold;
+    color: #fff;
+    background: #222;
+    padding: 4px 15px 4px 10px;
+    border-radius: 60px;
+    align-items: center;
+    display: inline-flex;
+}
+.header span {
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.header .toggler {
+    color: #222;
+}
+
+.foldBody {
+    height: 0;
+    overflow: hidden;
+}
+.body {
+    padding: 0 20px 20px 20px;
+}

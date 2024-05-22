@@ -3,7 +3,6 @@ import { uid } from 'uid';
 import { ENEMY_COLLECTION } from './EnemyCollection';
 import { WEAPON_CONFIG } from './WeaponConfig';
 import { DICE_COLOR_SET } from './DiceColorSet';
-import { AC_MODIFIER, DMG_MODIFIER } from './AttackModifier';
 
 const flattenCollection = () => {
     let result = [];
@@ -95,12 +94,6 @@ const useGlobalStore = create((set) => {
 
 const FLAT_ENEMY_COLLECTION = flattenCollection();
 
-export {
-    FLAT_ENEMY_COLLECTION,
-    WEAPON_CONFIG,
-    DICE_COLOR_SET,
-    AC_MODIFIER,
-    DMG_MODIFIER,
-};
+export { FLAT_ENEMY_COLLECTION, WEAPON_CONFIG, DICE_COLOR_SET };
 export const ALLY_COLLECTION = ['REMI', 'NIGHTINGALE', 'ROOK', 'ZEKE'];
 export default useGlobalStore;

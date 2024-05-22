@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon';
+import Icon from '../../comps/Icon';
 import { WEAPON_CONFIG } from '../../GlobalStore';
 import css from './css.module.css';
 
@@ -9,9 +9,8 @@ const NAMES_MAP = {
     burst: 'Burst',
 };
 
-const WeaponConfig = ({ value, onChange, type = 'shield' }) => {
+const SymbolAbility = ({ value, onChange, type = 'shield' }) => {
     const WeaponTag = Icon[NAMES_MAP[type]];
-    console.log('WeaponTag', NAMES_MAP[type]);
     const renderIcon = (count, active) => {
         const result = [];
         for (let i = 0; i < count; i++) {
@@ -53,4 +52,4 @@ const WeaponConfig = ({ value, onChange, type = 'shield' }) => {
     );
 };
 
-export default WeaponConfig;
+export default SymbolAbility;

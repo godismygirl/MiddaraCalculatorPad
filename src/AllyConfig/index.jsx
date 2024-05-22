@@ -1,22 +1,27 @@
 import React from 'react';
 import { Form } from 'antd';
-import WeaponConfig from './WeaponConfig';
+import Card from '../comps/Card';
+import Icon from '../comps/Icon';
+import SymbolAbility from './SymbolAbility';
 import DiceConfig from './DiceConfig';
 import BlackDiceConfig from './BlackDiceConfig';
 import useGlobalStore, { ALLY_COLLECTION } from '../GlobalStore';
-import AttackRollConfig from './AttackRollConfig';
-import Icon from '../Icon';
+import WeaponUpgrade from './WeaponUpgrade';
+import FieldStatus from './FieldStatus';
+import Discripline from './Discripline';
 import css from './css.module.css';
 
 const AllyConfig = () => {
     const { activeAlly, setActiveAlly } = useGlobalStore();
+    //const [em]
     const [form] = Form.useForm();
 
     return (
         <div className={css.container}>
-            <div className={css.roles}>
+            {/* <div className={css.roles}>
                 {ALLY_COLLECTION?.map((ally) => (
                     <div
+                        key={ally}
                         className={css.avatar}
                         onClick={() => setActiveAlly(ally)}
                     >
@@ -29,86 +34,65 @@ const AllyConfig = () => {
                         />
                     </div>
                 ))}
-            </div>
+            </div> */}
             {!!activeAlly && (
                 <div className={css.body}>
                     <Form form={form} layout="vertical">
-                        <div className={css.sectionHeader}>
-                            <div className={css.titleTag}>
-                                <Icon.Status color="#fff" size={12} />
-                                <span>WEAPON SET</span>
-                            </div>
-                        </div>
-                        <div className={css.sectionBody}>
+                        <Card title="SYMBOL ABILITY">
                             <Form.Item name="shield" noStyle>
-                                <WeaponConfig type="shield" />
+                                <SymbolAbility type="shield" />
                             </Form.Item>
                             <Form.Item name="book" noStyle>
-                                <WeaponConfig type="book" />
+                                <SymbolAbility type="book" />
                             </Form.Item>
                             <Form.Item name="burst" noStyle>
-                                <WeaponConfig type="burst" />
+                                <SymbolAbility type="burst" />
                             </Form.Item>
-                        </div>
-                        <div className={css.sectionHeader}>
-                            <div className={css.titleTag}>
-                                <Icon.Status color="#fff" size={12} />
-                                <span>ACC MOD</span>
-                            </div>
-                        </div>
-                        <div className={css.sectionBody}>
-                            <Form.Item name="accuracy" noStyle>
-                                <AttackRollConfig />
+                        </Card>
+
+                        <Card title="WEAPON UPGRADE">
+                            <Form.Item name="weapon_upgrade" noStyle>
+                                <WeaponUpgrade />
                             </Form.Item>
-                        </div>
+                        </Card>
 
-                        <div className={css.sectionHeader}>
-                            <div className={css.titleTag}>
-                                <Icon.Status color="#fff" size={12} />
-                                <span>DMG MOD</span>
-                            </div>
-                        </div>
+                        <Card title="FIELD STATUS">
+                            <Form.Item name="field_status" noStyle>
+                                <FieldStatus />
+                            </Form.Item>
+                        </Card>
 
-                        <div className={css.section}>
-                            <div className={css.sectionHeader}>
-                                <div className={css.titleTag}>
-                                    <Icon.Status color="#fff" size={12} />
-                                    <span>DICE SET A</span>
-                                </div>
-                            </div>
-                            <div className={css.sectionBody}>
-                                <Form.Item name="diceA" noStyle>
-                                    <DiceConfig />
-                                </Form.Item>
-                            </div>
-                        </div>
-                        <div className={css.section}>
-                            <div className={css.sectionHeader}>
-                                <div className={css.titleTag}>
-                                    <Icon.Status color="#fff" size={12} />
-                                    <span>DICE SET B</span>
-                                </div>
-                            </div>
-                            <div className={css.sectionBody}>
-                                <Form.Item name="diceB" noStyle>
-                                    <DiceConfig />
-                                </Form.Item>
-                            </div>
-                        </div>
-                        <div className={css.section}>
-                            <div className={css.sectionHeader}>
-                                <div className={css.titleTag}>
-                                    <Icon.Status color="#fff" size={12} />
-                                    <span>DICE DICE SET</span>
-                                </div>
-                            </div>
-                            <div className={css.sectionBody}>
-                                <Form.Item name="blackDice" noStyle>
-                                    <BlackDiceConfig />
-                                </Form.Item>
-                            </div>
-                        </div>
+                        <Card title="DISCRIPLINE">
+                            <Form.Item name="discripline" noStyle>
+                                <Discripline />
+                            </Form.Item>
+                        </Card>
+
+                        <Card title="DICE SET A">
+                            <Form.Item name="diceA" noStyle>
+                                <DiceConfig />
+                            </Form.Item>
+                        </Card>
+
+                        <Card title="DICE SET B">
+                            <Form.Item name="diceB" noStyle>
+                                <DiceConfig />
+                            </Form.Item>
+                        </Card>
+
+                        <Card title="EMPOWER SET">
+                            <Form.Item name="empower" noStyle>
+                                <BlackDiceConfig />
+                            </Form.Item>
+                        </Card>
                     </Form>
+                    <div className={css.footer}>
+                        <button className={css.button}>
+                            <Icon.Status color="#fff" size={14} />
+                            <span className={css.text}>CALCULATE</span>
+                            <Icon.Status color="#fff" size={14} />
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

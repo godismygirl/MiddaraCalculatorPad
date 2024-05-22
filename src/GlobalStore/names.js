@@ -15,9 +15,19 @@ export const ENEMY_NAMES = [
 
 export const DISCRIPLINE_NAMES = [
     'TRICK_SHOT',
-    'C.Q.C',
+    'CQC',
     'PRECISE_STRIKE',
+    'DEAD_END',
+    'HAMMER_HELM',
     'MASTER_OF_THE_VESSEL',
+];
+
+export const UPGRADE_NAMES = [
+    'MASTER_WORK',
+    'DEVASTATING',
+    'OTHERWORLDLY',
+    'IMBUED',
+    'DARK',
 ];
 
 export const DEBUFF_NAMES = ['DARKNESS', 'HINDERING', 'CROSS_ALLY', 'FLANKING'];
