@@ -1,25 +1,30 @@
 .box {
-    padding: 4px;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    text-align: center;
+  padding: 4px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  text-align: center;
 }
 
 .header {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .header .label {
-    margin-right: 8px;
-    font-weight: bold;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.checkPlace {
+  height: 20px;
+  padding-top: 4px;
 }
 
 .body {
-    display: flex;
-    margin-top: 15px;
+  display: flex;
+  margin-top: 15px;
 }
 
 .active {
-    color: #1677ff;
-    font-size: 16px;
+  color: #1677ff;
+  font-size: 16px;
 }

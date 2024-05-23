@@ -72,7 +72,7 @@ let DICE_SET = {
     10: {
       shield: 1,
       book: 2,
-      burst: 0,
+      burst: 1,
     },
   },
 };
