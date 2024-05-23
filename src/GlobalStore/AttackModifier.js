@@ -13,13 +13,7 @@ const MODIFIER_TYPE = {
   DIFF_DMG: "DIFF_DMG",
 };
 
-const masterVesselCalculator = (tagInput) => {};
-
-const deadEndCalc = () => {};
-
 const nemesisDamageType = () => {};
-
-const courageCalc = () => {};
 
 const cqcCalc = () => {
   //根据距离加伤0-4
