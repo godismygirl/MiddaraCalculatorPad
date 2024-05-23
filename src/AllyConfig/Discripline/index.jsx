@@ -3,9 +3,16 @@ import { Checkbox, Row, Col } from 'antd';
 import CQCSelect from './CQCSelect';
 import css from './css.module.css';
 
-const Discripline = ({ value, onChange }) => {
+//数据格式 [${name}, ${name}=${dmg}]
+
+const Discripline = ({ value, onChange, userInput, onUserInput }) => {
+    debugger;
     return (
-        <Checkbox.Group style={{ width: '100%' }}>
+        <Checkbox.Group
+            value={value}
+            style={{ width: '100%' }}
+            onChange={onChange}
+        >
             <div className={css.container}>
                 <div className={css.block + ' ' + css.martial}>
                     <div className={css.header}>
@@ -47,7 +54,11 @@ const Discripline = ({ value, onChange }) => {
                                 <Checkbox value="DEAD_END">DEAD END</Checkbox>
                             </Col>
                             <Col span={8}>
-                                <CQCSelect />
+                                <CQCSelect
+                                    value="CQC"
+                                    dmg={userInput?.['CQC']}
+                                    onDmgChange={(d) => onUserInput({ CQC: d })}
+                                />
                             </Col>
                         </Row>
                     </div>

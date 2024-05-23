@@ -10,7 +10,6 @@
 .list {
     flex-grow: 1;
     overflow-y: auto;
-
     padding-top: 2px;
     box-sizing: border-box;
 }

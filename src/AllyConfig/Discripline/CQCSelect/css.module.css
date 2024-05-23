@@ -1,3 +1,11 @@
 .box {
-    display: inline-flex;
+    /* display: inline-flex;
+    align-items: center; */
+    position: relative;
+}
+
+.number {
+    position: absolute;
+    margin-left: 70px;
+    top: -2px;
 }

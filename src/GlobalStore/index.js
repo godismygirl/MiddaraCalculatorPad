@@ -4,27 +4,27 @@ import { ENEMY_COLLECTION } from './EnemyCollection';
 import { WEAPON_CONFIG } from './WeaponConfig';
 import { DICE_COLOR_SET } from './DiceColorSet';
 
-const flattenCollection = () => {
-    let result = [];
-    console.log(ENEMY_COLLECTION);
-    Object.keys(ENEMY_COLLECTION)?.forEach((key) =>
-        result.push({
-            type: key,
-            ...ENEMY_COLLECTION[key],
-        })
-    );
-    return result;
-};
+// const flattenCollection = () => {
+//     let result = [];
+//     console.log(ENEMY_COLLECTION);
+//     Object.keys(ENEMY_COLLECTION)?.forEach((key) =>
+//         result.push({
+//             type: key,
+//             ...ENEMY_COLLECTION[key],
+//         })
+//     );
+//     return result;
+// };
 
 // {
 //     activeEnemy:{},
 //     selectedEnemy:[],
 //     activeAlly:"",
-//     allySet: {
-//         remi:{},
-//         nightingale:{},
-//         rook:{},
-//         zeke:{}
+//     allySave: {
+//         REMI:{},
+//         NIGHTINGALE:{},
+//         ROOK:{},
+//         ZEKE:{}
 //     }
 // }
 
@@ -79,7 +79,14 @@ const useGlobalStore = create((set) => {
         });
     };
 
+    const updateAllySave = (data) => {
+        set(({ activeAlly, allySave }) => ({
+            allySave: { ...allySave, [activeAlly]: data },
+        }));
+    };
+
     return {
+        allySave: {},
         activeEnemy: null,
         setActiveEnemy,
         activeAlly: '',
@@ -89,11 +96,10 @@ const useGlobalStore = create((set) => {
         removeEnemyByType,
         removeEnemyById,
         updateEnemyStatus,
+        updateAllySave,
     };
 });
 
-const FLAT_ENEMY_COLLECTION = flattenCollection();
-
-export { FLAT_ENEMY_COLLECTION, WEAPON_CONFIG, DICE_COLOR_SET };
+export { ENEMY_COLLECTION, WEAPON_CONFIG, DICE_COLOR_SET };
 export const ALLY_COLLECTION = ['REMI', 'NIGHTINGALE', 'ROOK', 'ZEKE'];
 export default useGlobalStore;

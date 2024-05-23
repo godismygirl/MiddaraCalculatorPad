@@ -1,5 +1,6 @@
-export const ENEMY_COLLECTION = {
-    BLIGHTED_GUARDIAN: {
+export const ENEMY_COLLECTION = [
+    {
+        type: 'BLIGHTED_GUARDIAN',
         en_name: 'Blighted Guardian',
         cn_name: '枯萎疫护卫',
         def: 14,
@@ -7,7 +8,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    CORPSE_COLLECTOR: {
+    {
+        type: 'CORPSE_COLLECTOR',
         en_name: 'Corpse Collector',
         cn_name: '收尸花',
         def: 15,
@@ -15,7 +17,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    ENSLAVED_SPIRIT: {
+    {
+        type: 'ENSLAVED_SPIRIT',
         en_name: 'Enslaved Spirit',
         cn_name: '拘役之灵',
         def: 14,
@@ -23,7 +26,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    GATEKEEPER: {
+    {
+        type: 'GATEKEEPER',
         en_name: 'Gatekeeper',
         cn_name: '看门人',
         def: 12,
@@ -32,7 +36,8 @@ export const ENEMY_COLLECTION = {
         magic_resist: false,
         ranged_resist: true,
     },
-    GEVAUDAN: {
+    {
+        type: 'GEVAUDAN',
         en_name: 'Gevaudan',
         cn_name: '狼',
         def: 16,
@@ -40,7 +45,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    LICH_WURM: {
+    {
+        type: 'LICH_WURM',
         en_name: 'Lich Wurm',
         cn_name: '巫妖',
         def: 13,
@@ -48,7 +54,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    LIVING_OBLATION: {
+    {
+        type: 'LIVING_OBLATION',
         en_name: 'Living Oblation',
         cn_name: '活祭品',
         def: 14,
@@ -56,7 +63,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    MERK_HOUND: {
+    {
+        type: 'MERK_HOUND',
         en_name: 'Merk Hound',
         cn_name: '泽地猎犬',
         def: 14,
@@ -64,7 +72,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    SOUL_BUTCHER: {
+    {
+        type: 'SOUL_BUTCHER',
         en_name: 'Soul Butcher',
         cn_name: '灵魂屠夫',
         def: 14,
@@ -72,7 +81,8 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-    TORTURED_IMMORTAL: {
+    {
+        type: 'TORTURED_IMMORTAL',
         en_name: 'Tortured Immortal',
         cn_name: '不死者',
         def: 14,
@@ -80,4 +90,4 @@ export const ENEMY_COLLECTION = {
         physic_resist: false,
         magic_resist: false,
     },
-};
+];

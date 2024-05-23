@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import useGlobalStore from '../GlobalStore';
-import { FLAT_ENEMY_COLLECTION } from '../GlobalStore';
+import useGlobalStore from '../../GlobalStore';
+import { ENEMY_COLLECTION } from '../../GlobalStore';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import Icon from '../comps/Icon';
+import Icon from '../../comps/Icon';
 import css from './css.module.css';
 
 const FoeSelect = () => {
@@ -23,7 +23,7 @@ const FoeSelect = () => {
             </button>
             {open && (
                 <div className={css.container}>
-                    {FLAT_ENEMY_COLLECTION?.map((el) => {
+                    {ENEMY_COLLECTION?.map((el) => {
                         const count = getFoeCount(el.type);
                         return (
                             <div key={el.type} className={css.block}>

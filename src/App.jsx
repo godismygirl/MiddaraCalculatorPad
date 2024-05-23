@@ -6,13 +6,8 @@ import css from './app.module.css';
 const App = () => {
     return (
         <div className={css.page}>
-            <div className={css.header}>
-                <span className={css.title}>Middara Calculator Pad</span>
-            </div>
-            <div className={css.body}>
-                <BattleField />
-                <AllyConfig />
-            </div>
+            <BattleField />
+            <AllyConfig />
         </div>
     );
 };

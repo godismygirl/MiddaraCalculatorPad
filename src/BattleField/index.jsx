@@ -2,7 +2,8 @@ import React from 'react';
 import { HeartOutlined, BulbOutlined } from '@ant-design/icons';
 import useGlobalStore from '../GlobalStore';
 import { ConfigProvider, theme, Checkbox } from 'antd';
-import EnemySelect from '../EnemySelect';
+import EnemySelect from './EnemySelect';
+import AllySelect from './AllySelect';
 import css from './css.module.css';
 
 const BattleField = () => {
@@ -16,6 +17,7 @@ const BattleField = () => {
     return (
         <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
             <div className={css.box}>
+                <AllySelect />
                 <div className={css.list}>
                     {selectedEnemy?.map((enemy) => (
                         <div

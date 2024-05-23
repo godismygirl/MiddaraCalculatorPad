@@ -1,33 +1,5 @@
 .page {
     height: 100%;
-    overflow: hidden;
-}
-
-.header {
-    height: 8vh;
-    background: #fff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-}
-
-.title {
-    color: #222;
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-}
-
-.body {
-    height: 100%;
-    box-sizing: border-box;
-    padding-top: 8vh;
-    display: flex;
-
     overflow: hidden;
 }
