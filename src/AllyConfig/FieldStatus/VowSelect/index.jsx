@@ -25,7 +25,7 @@ const CQCSelect = ({ number, onNumberChange, value }) => {
                     }
                 }}
             >
-                C.Q.C
+                Vow
             </Checkbox>
             {checked && (
                 <div className={css.number}>
@@ -34,7 +34,7 @@ const CQCSelect = ({ number, onNumberChange, value }) => {
                         size="small"
                         optionType="button"
                         buttonStyle="solid"
-                        options={[1, 2, 3, 4]}
+                        options={[1, 2, 3, 4, 5]}
                         onChange={(e) => {
                             onNumberChange?.(e.target.value);
                         }}

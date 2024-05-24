@@ -1,17 +1,30 @@
 import React from 'react';
-import { HeartOutlined, BulbOutlined } from '@ant-design/icons';
 import useGlobalStore from '../GlobalStore';
-import { ConfigProvider, theme, Checkbox } from 'antd';
+import { ConfigProvider, theme, Checkbox, Row, Col } from 'antd';
 import EnemySelect from './EnemySelect';
 import AllySelect from './AllySelect';
 import css from './css.module.css';
 
 const BattleField = () => {
-    const { selectedEnemy, updateEnemyStatus, activeEnemy, setActiveEnemy } =
-        useGlobalStore();
+    const {
+        selectedEnemy,
+        updateEnemyStatus,
+        activeEnemy,
+        setActiveEnemy,
+        eraseEnemyResist,
+        restoreEnemyResist,
+    } = useGlobalStore();
 
     const onStatusChange = (id, status) => {
         updateEnemyStatus({ id, status });
+    };
+
+    const onCastWilt = (checked, foeId) => {
+        if (checked) {
+            eraseEnemyResist(foeId);
+        } else {
+            restoreEnemyResist(foeId);
+        }
     };
 
     return (
@@ -36,63 +49,65 @@ const BattleField = () => {
                                 />
                             </div>
                             <div className={css.content}>
-                                <div className={css.row}>
-                                    <i>
-                                        <HeartOutlined />
-                                    </i>
-                                    <div className={css.text}>
-                                        HP REMAIN
-                                        <span className={css.strong}>40</span>
-                                    </div>
-                                </div>
-                                <div className={css.row}>
-                                    <i>
-                                        <BulbOutlined />
-                                    </i>
-                                    <div className={css.text}>
-                                        LAST DMG DEALT
-                                        <span className={css.strong}>40</span>
-                                    </div>
-                                </div>
-                                <div className={css.resist}>
-                                    <span
-                                        className={css.tag + ' ' + css.physic}
+                                <div className={css.resistRow}>
+                                    <Checkbox.Group
+                                        style={{ width: '100%' }}
+                                        value={enemy.active_resist}
                                     >
-                                        RESIST PHYSIC
-                                    </span>
-                                    <span className={css.tag + ' ' + css.magic}>
-                                        RESIST MAGIC
-                                    </span>
-                                    <span
-                                        className={css.tag + ' ' + css.ranged}
-                                    >
-                                        RESIST RANGED
-                                    </span>
+                                        <Row>
+                                            <Col span={12}>
+                                                <Checkbox
+                                                    value="PHYSICAL"
+                                                    disabled
+                                                >
+                                                    Physical Reisit
+                                                </Checkbox>
+                                            </Col>
+                                            <Col span={12}>
+                                                <Checkbox
+                                                    value="MAGIC"
+                                                    disabled
+                                                >
+                                                    Magic Reisit
+                                                </Checkbox>
+                                            </Col>
+                                        </Row>
+                                    </Checkbox.Group>
                                 </div>
-                                <Checkbox.Group
-                                    style={{ width: '100%' }}
-                                    onChange={(v) =>
-                                        onStatusChange(enemy.id, v)
-                                    }
-                                >
-                                    <div className={css.status}>
-                                        <div className={css.block}>
-                                            <Checkbox value="WILT">
-                                                WILT
-                                            </Checkbox>
-                                        </div>
-                                        <div className={css.block}>
-                                            <Checkbox value="NEMESIS">
-                                                NEMESIS
-                                            </Checkbox>
-                                        </div>
-                                        <div className={css.block}>
-                                            <Checkbox value="HINDERING">
-                                                HINDERING
-                                            </Checkbox>
-                                        </div>
-                                    </div>
-                                </Checkbox.Group>
+                                <div className={css.statusRow}>
+                                    <Checkbox.Group
+                                        style={{ width: '100%' }}
+                                        onChange={(v) =>
+                                            onStatusChange(enemy.id, v)
+                                        }
+                                    >
+                                        <Row gutter={[0, 6]}>
+                                            <Col span={12}>
+                                                <Checkbox
+                                                    value="WILT"
+                                                    onChange={(e) =>
+                                                        onCastWilt(
+                                                            e.target.checked,
+                                                            enemy.id
+                                                        )
+                                                    }
+                                                >
+                                                    Wilt
+                                                </Checkbox>
+                                            </Col>
+                                            <Col span={12}>
+                                                <Checkbox value="NEMESIS">
+                                                    Nemisis
+                                                </Checkbox>
+                                            </Col>
+                                            <Col span={12}>
+                                                <Checkbox value="HINDERING">
+                                                    Hindering
+                                                </Checkbox>
+                                            </Col>
+                                        </Row>
+                                    </Checkbox.Group>
+                                </div>
                             </div>
                         </div>
                     ))}

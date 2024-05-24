@@ -1,25 +1,37 @@
-import React from "react";
-import { Checkbox, Row, Col } from "antd";
+import React from 'react';
+import { Checkbox, Row, Col } from 'antd';
+import VowSelect from './VowSelect';
 
-const FieldStatus = (props) => {
-  return (
-    <Checkbox.Group {...props} style={{ width: "100%" }}>
-      <Row>
-        <Col span={6}>
-          <Checkbox value="COURAGE">COURAGE</Checkbox>
-        </Col>
-        <Col span={6}>
-          <Checkbox value="DARKNESS">DARKNESS</Checkbox>
-        </Col>
-        <Col span={6}>
-          <Checkbox value="CROSS_ALLY">CROSS ALLY</Checkbox>
-        </Col>
-        <Col span={6}>
-          <Checkbox value="FLANKING">FLANKING</Checkbox>
-        </Col>
-      </Row>
-    </Checkbox.Group>
-  );
+const FieldStatus = ({ value, onChange, userInput, onUserInput }) => {
+    return (
+        <Checkbox.Group
+            value={value}
+            onChange={onChange}
+            style={{ width: '100%' }}
+        >
+            <Row gutter={[0, 10]}>
+                <Col span={8}>
+                    <Checkbox value="DARKNESS">Darkness</Checkbox>
+                </Col>
+                <Col span={16}>
+                    <Checkbox value="CROSS_ALLY">Cross Ally</Checkbox>
+                </Col>
+                <Col span={8}>
+                    <Checkbox value="COURAGE">Courage</Checkbox>
+                </Col>
+                <Col span={8}>
+                    <Checkbox value="FLANKING">Flanking</Checkbox>
+                </Col>
+                <Col span={8}>
+                    <VowSelect
+                        value="VOW"
+                        number={userInput?.['VOW']}
+                        onNumberChange={(d) => onUserInput({ VOW: d })}
+                    />
+                </Col>
+            </Row>
+        </Checkbox.Group>
+    );
 };
 
 export default FieldStatus;

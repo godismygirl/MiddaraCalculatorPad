@@ -23,7 +23,7 @@
 }
 
 .item {
-    background: #201c1c;
+    background: #1f1c1c;
     padding: 0.5vh;
     box-sizing: border-box;
     border-top: 2px solid #3a3535;
@@ -40,6 +40,10 @@
     box-sizing: border-box;
     border: 0.5vh solid #f50;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
+}
+
+.portait {
+    flex-shrink: 0;
 }
 .portait img {
     object-fit: cover;
@@ -79,31 +83,23 @@
     color: #fff;
 }
 
-.row {
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 1.6vh;
-    padding: 4px 0;
-}
-.row i {
-    margin-right: 5px;
-}
-
 .content {
-    padding: 1.5vh;
+    flex-grow: 1;
+    padding: 1vh 1.5vh;
+    box-sizing: border-box;
 }
 
-.resist {
-    padding: 5px 0;
-    margin-top: 8px;
-}
-
-.status {
-    display: flex;
-    padding-top: 15px;
+.resistRow {
     width: 100%;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 12px;
 }
+
+.statusRow {
+    width: 100%;
+    padding-top: 12px;
+}
+
 .status .block {
     flex: 1;
 }
