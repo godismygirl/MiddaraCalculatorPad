@@ -1,105 +1,106 @@
 .box {
-    flex-basis: 35%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background: #3a3535;
+  flex-basis: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #3a3535;
 }
 
 .list {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding-top: 2px;
-    box-sizing: border-box;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 2px;
+  box-sizing: border-box;
 }
 
 .list::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .footer {
-    padding: 25px;
-    box-sizing: border-box;
+  padding: 25px;
+  box-sizing: border-box;
 }
 
 .item {
-    background: #1f1c1c;
-    padding: 0.5vh;
-    box-sizing: border-box;
-    border-top: 2px solid #3a3535;
-    display: flex;
-    position: relative;
+  background: #1f1c1c;
+  padding: 0.5vh;
+  box-sizing: border-box;
+  border-top: 2px solid #3a3535;
+  display: flex;
+  position: relative;
 }
 .item .selectedOutline {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    box-sizing: border-box;
-    border: 0.5vh solid #f50;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0.5vh solid #f50;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
 }
 
 .portait {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 .portait img {
-    object-fit: cover;
-    width: 15vh;
-    height: 20vh;
+  object-fit: cover;
+  width: 15vh;
+  height: 20vh;
 }
 
 .tag {
-    border-radius: 20px;
-    white-space: nowrap;
-    border: 2px solid;
-    font-size: 12px;
-    padding: 2px 6px;
+  border-radius: 20px;
+  white-space: nowrap;
+  border: 2px solid;
+  font-size: 12px;
+  padding: 2px 6px;
 }
 .physic {
-    border-color: #1abc9c;
-    color: #1abc9c;
+  border-color: #1abc9c;
+  color: #1abc9c;
 }
 .magic {
-    border-color: #f50;
-    color: #f50;
+  border-color: #f50;
+  color: #f50;
 }
 .ranged {
-    border-color: #74b9ff;
-    color: #74b9ff;
+  border-color: #74b9ff;
+  color: #74b9ff;
 }
 
 .resist {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .strong {
-    font-weight: bold;
-    margin-left: 6px;
-    color: #fff;
+  font-weight: bold;
+  margin-left: 6px;
+  color: #fff;
 }
 
 .content {
-    flex-grow: 1;
-    padding: 1vh 1.5vh;
-    box-sizing: border-box;
+  flex-grow: 1;
+  padding: 1vh 1.5vh;
+  box-sizing: border-box;
 }
 
 .resistRow {
-    width: 100%;
-    border-bottom: 1px dashed #444;
-    padding-bottom: 12px;
+  width: 100%;
+  border-bottom: 1px dashed #444;
+  padding-bottom: 12px;
 }
 
 .statusRow {
-    width: 100%;
-    padding-top: 12px;
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .status .block {
-    flex: 1;
+  flex: 1;
 }

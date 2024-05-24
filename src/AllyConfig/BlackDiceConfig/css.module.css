@@ -8,6 +8,7 @@
 .header {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 .header .label {
   margin-right: 8px;
@@ -21,7 +22,6 @@
 
 .body {
   display: flex;
-  margin-top: 15px;
 }
 
 .active {

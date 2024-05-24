@@ -1,17 +1,19 @@
 @font-face {
-    font-family: 'Verdana';
-    src: url('../public/font/Verdana.ttf');
+  font-family: "Verdana";
+  src: url("../public/font/Verdana.ttf");
 }
 
 @font-face {
-    font-family: 'Verdana-Bold';
-    src: url('../public/font/verdanab.ttf');
+  font-family: "Verdana-Bold";
+  src: url("../public/font/verdanab.ttf");
 }
 
 html,
 body,
 #root {
-    height: 100%;
-    overflow: hidden;
-    font-family: 'DIN';
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
