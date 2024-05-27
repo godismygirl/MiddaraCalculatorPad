@@ -1,0 +1,36 @@
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.desc {
+    margin-right: 5px;
+}
+
+.label {
+    color: #444;
+    padding-right: 8px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section .label {
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 6px 10px;
+}
+.section .value {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.strong {
+    font-size: 18px;
+    font-weight: bold;
+}
