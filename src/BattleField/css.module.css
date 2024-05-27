@@ -93,12 +93,15 @@
   width: 100%;
   border-bottom: 1px dashed #444;
   padding-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .statusRow {
   width: 100%;
-  padding-top: 12px;
+
   padding-bottom: 12px;
+  border-bottom: 1px dashed #444;
+  margin-bottom: 12px;
 }
 
 .status .block {

@@ -48,25 +48,24 @@ const BattleField = () => {
                 <img alt="" src={`./portait/${enemy.type}.png`} />
               </div>
               <div className={css.content}>
-                <div className={css.resistRow}>
-                  <Checkbox.Group
-                    style={{ width: "100%" }}
-                    value={enemy.active_resist}
-                  >
-                    <Row>
-                      <Col span={12}>
-                        <Checkbox value="PHYSICAL" disabled>
-                          Physical Reisit
-                        </Checkbox>
-                      </Col>
-                      <Col span={12}>
-                        <Checkbox value="MAGIC" disabled>
-                          Magic Reisit
-                        </Checkbox>
-                      </Col>
-                    </Row>
-                  </Checkbox.Group>
-                </div>
+                {enemy.resistance?.length > 0 && (
+                  <div className={css.resistRow}>
+                    <Checkbox.Group
+                      style={{ width: "100%" }}
+                      value={enemy.activeResistance}
+                    >
+                      <Row>
+                        {enemy.resistance.map((r) => (
+                          <Col span={12}>
+                            <Checkbox value={r} disabled>
+                              Reisit {r.toLowerCase()}
+                            </Checkbox>
+                          </Col>
+                        ))}
+                      </Row>
+                    </Checkbox.Group>
+                  </div>
+                )}
                 <div className={css.statusRow}>
                   <Checkbox.Group
                     style={{ width: "100%" }}
@@ -101,9 +100,9 @@ const BattleField = () => {
               </div>
             </div>
           ))}
-        </div>
-        <div className={css.footer}>
-          <EnemySelect />
+          <div className={css.footer}>
+            <EnemySelect />
+          </div>
         </div>
       </div>
     </ConfigProvider>

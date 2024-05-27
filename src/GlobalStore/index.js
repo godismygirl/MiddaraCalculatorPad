@@ -81,7 +81,7 @@ const useGlobalStore = create((set) => {
     set(({ selectedEnemy }) => {
       const se = [...selectedEnemy];
       const target = se.find((foe) => foe.id === id);
-      target.active_resist = [];
+      target.activeResistance = [];
       return { selectedEnemy: se };
     });
   };
@@ -90,16 +90,7 @@ const useGlobalStore = create((set) => {
     set(({ selectedEnemy }) => {
       const se = [...selectedEnemy];
       const target = se.find((foe) => foe.id === id);
-      target.active_resist = [];
-      if (target.physical_resist) {
-        target.active_resist.push("PHYSICAL");
-      }
-      if (target.magic_resist) {
-        target.active_resist.push("MAGIC");
-      }
-      if (target.ranged_resist) {
-        target.active_resist.push("RANGED");
-      }
+      target.activeResistance = [...target.resistance];
       return { selectedEnemy: se };
     });
   };
